@@ -1,0 +1,28 @@
+<form [formGroup]="myform" (ngSubmit)="addToCart()">
+   <button mat-icon-button class="close-button" [mat-dialog-close]="true">
+      <mat-icon class="close-icon" color="warn">close</mat-icon>
+    </button>
+<h1 mat-dialog-title>Add Product</h1>
+<div mat-dialog-content>
+   <mat-form-field>
+    <mat-label>Product Name</mat-label>
+    <input formControlName="name" matInput>
+    <mat-error *ngIf="myError('name', 'required')">Name is required</mat-error>
+   </mat-form-field>
+
+   <mat-form-field>
+    <mat-label>Product Image</mat-label>
+    <input formControlName="image" matInput>
+    <mat-error *ngIf="myError('image', 'required')">Image is required</mat-error>
+   </mat-form-field>
+
+   <mat-form-field>
+    <mat-label>Product Price</mat-label>
+    <input  formControlName="price" matInput>
+    <mat-error *ngIf="myError('price', 'required')">Price is required</mat-error>
+   </mat-form-field>
+
+   <button  mat-button color="primary">Add To Cart</button>
+</div>
+
+</form>
